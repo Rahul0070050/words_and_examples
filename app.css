@@ -30,6 +30,13 @@ nav {
     padding: 1rem;
     margin: 1rem;
 }
+#saved-facts-list {
+    max-height: 46vh;
+    overflow: auto;
+}
+#saved-facts-list::-webkit-scrollbar {
+    display: none;
+}
 ul li {
     display: flex !important;
     justify-content: space-between;
