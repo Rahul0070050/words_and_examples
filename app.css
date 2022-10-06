@@ -1,0 +1,10 @@
+body {
+    min-height: 98vh;
+    background-color: lightblue;
+    font-family: sans-serif;
+    text-transform: capitalize;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: large;
+}
