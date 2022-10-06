@@ -1,0 +1,20 @@
+{
+    "name": "PWA sample",
+    "short_name": "PWA Q",
+    "start_url": ".",
+    "theme_color": "#0bab1b",
+    "background_color": "#fff",
+    "display": "standalone",
+    "icons": [
+        {
+            "src": "./download.webp",
+            "size": "144x144",
+            "type": "image/png"
+        },
+        {
+            "src": "./download.webp",
+            "size": "144x144",
+            "type": "image/png"
+        }
+    ]
+}
