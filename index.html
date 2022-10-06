@@ -22,14 +22,19 @@
 </head>
 
 <body>
-
-    <div>
+    <div class="contant">
         <h2 style="margin-left: 1rem;"><span>random facts</span></h2>
-        <h2
-            style="line-height: 2rem; background-color: beige; padding: 1rem; border-radius: 10px; text-transform: capitalize;">
-            <strong id="fact">some random fact</strong>
+        <h2 id="fact-text"
+            style="line-height: 2rem; margin: 1rem 0; background-color: beige; padding: 1rem; border-radius: 10px; text-transform: capitalize;">
+            <strong id="fact">some random facts.....</strong>
         </h2>
         <button class="btn btn-dark" onclick="shoRandomResult()">Next</button>
+        <button class="btn btn-dark" onclick="saveTheFact()">save</button>
+    </div>
+    <div id="saved-facts">
+        <h5>Saved facts</h5>
+        <ul class="list-group list-group-light" id="saved-facts-list">
+        </ul>
     </div>
     <script src="./app.js"></script>
 

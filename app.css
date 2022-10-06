@@ -1,13 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 body {
     min-height: 98vh;
     background-color: lightblue;
     font-family: sans-serif;
     text-transform: capitalize;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
     font-size: large;
 }
+nav {
+    margin: 0;
+}
+
+.contant {
+    margin-top: 10vh;
+    margin: 1rem;
+}
+#fact-text {
+    min-height: 30vh;
+    width: 100%;
+}
+
+#saved-facts {
+    padding: 1rem;
+    margin: 1rem;
+}
+ul li {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+}
+ul li #text {
+    width: 80%;
+}
+ul li h6 img {
+    width: 1rem;
+}
+.delete {
+    margin-right: 0;
+}
+
+
+
 
 /* From uiverse.io by @xueyuantan */
 button {
