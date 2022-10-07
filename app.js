@@ -1,15 +1,38 @@
+const affermations = "https://dulce-affirmations-api.herokuapp.com/affirmation/"
+const randomFacts = "https://asli-fun-fact-api.herokuapp.com/"
+
+const savedFacts = document.getElementById('saved-facts-list')
+
 let fact = null;
 let key = null;
 let have = false;
+let url = affermations
 
-const savedFacts = document.getElementById('saved-facts-list')
+const affirBtn = document.getElementById("affirmation")
+const factBtn = document.getElementById("random-facts")
+
+affirBtn.addEventListener("click", (e) => {
+    affirBtn.classList.add("btn-success")
+    factBtn.classList.remove("btn-success")
+    url = affermations
+})
+
+factBtn.addEventListener("click", (e) => {
+    affirBtn.classList.remove("btn-success")
+    factBtn.classList.add("btn-success")
+    url = randomFacts
+})
+
+
 function shoRandomResult() {
 
-    fetch('https://asli-fun-fact-api.herokuapp.com/')
+    fetch(url)
         .then(response => response.json())
         .then(response => {
-            document.getElementById('fact').innerText = response.data.fact
-            fact = response.data.fact
+            let content = response?.data?.fact || response[0]?.phrase
+            console.log(content);
+            document.getElementById('fact').innerText = content
+            fact = content
             key = new Date().getTime()
             have = true;
         })

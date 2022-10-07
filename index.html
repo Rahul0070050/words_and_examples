@@ -23,12 +23,15 @@
 
 <body>
     <div class="contant">
-        <h2 style="margin-left: 1rem;"><span>random facts</span></h2>
+        <div class="w-100 d-flex justify-content-between">
+            <button id="affirmation" class="mx-2 btn btn-success" style="width: fit-content !important;">affirmation</button>
+            <button id="random-facts" class="mx-2 btn">facts</button>
+        </div>
         <h2 id="fact-text"
             style="line-height: 2rem; margin: 1rem 0; background-color: beige; padding: 1rem; border-radius: 10px; text-transform: capitalize;">
             <strong id="fact">some random facts.....</strong>
         </h2>
-        <button class="btn btn-dark" onclick="shoRandomResult()">Next</button>
+        <button class="btn btn-dark" id="" onclick="shoRandomResult()">Next</button>
         <button class="btn btn-dark" onclick="saveTheFact()">save</button>
     </div>
     <div id="saved-facts">
