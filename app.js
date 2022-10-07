@@ -81,7 +81,7 @@ function deleteFact(key) {
 
 
 
-\\// do your browser supports service worker
+// do your browser supports service worker
 if ("serviceWorker" in navigator) {
     // register the service worker file
     navigator.serviceWorker.register('./app.service.worker.js').then(res => { // success
