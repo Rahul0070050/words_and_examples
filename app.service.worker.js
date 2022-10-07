@@ -5,6 +5,7 @@ const CATCHE_NAME = "rahuls catche"
 const cacheFiles = [
     "./app.css",
     "./app.js",
+    "index.html",
     "manifest.json",
     "download.webp"
 ];
