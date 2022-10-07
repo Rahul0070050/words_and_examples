@@ -15,12 +15,14 @@ affirBtn.addEventListener("click", (e) => {
     affirBtn.classList.add("btn-success")
     factBtn.classList.remove("btn-success")
     url = affermations
+    shoRandomResult()
 })
 
 factBtn.addEventListener("click", (e) => {
     affirBtn.classList.remove("btn-success")
     factBtn.classList.add("btn-success")
     url = randomFacts
+    shoRandomResult()
 })
 
 
@@ -39,6 +41,8 @@ function shoRandomResult() {
         .catch(err => console.error(err));
 }
 // localStorage.clear('fact')
+
+shoRandomResult()
 
 let facts = JSON.parse(localStorage.getItem('fact'))
 facts?.forEach(fact => {
@@ -67,7 +71,7 @@ function saveTheFact() {
 function deleteFact(key) {
     let facts = JSON.parse(localStorage.getItem('fact'))
     let tempFact = facts?.filter(fact => fact.key != key)
-    localStorage.setItem('fact',JSON.stringify(tempFact))
+    localStorage.setItem('fact', JSON.stringify(tempFact))
     savedFacts.innerHTML = ""
     tempFact?.forEach(fact => {
         savedFacts.innerHTML += `<li class="list-group-item px-3 border-0 rounded-3 list-group-item-primary mb-2"><h6 id="text">${fact.fact}</h6><h6 id="delete" onClick="deleteFact(${fact.key})"><img src="https://img.icons8.com/ios-glyphs/90/000000/delete-sign.png"/></h6></li>`
@@ -76,9 +80,8 @@ function deleteFact(key) {
 
 
 
-shoRandomResult()
 
-// do your browser supports service worker
+\\// do your browser supports service worker
 if ("serviceWorker" in navigator) {
     // register the service worker file
     navigator.serviceWorker.register('./app.service.worker.js').then(res => { // success
