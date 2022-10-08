@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 body {
+    position: relative;
     min-height: 98vh;
     background-color: lightblue;
     font-family: sans-serif;
@@ -13,17 +16,42 @@ body {
     /* align-items: center; */
     font-size: large;
 }
-nav {
-    margin: 0;
-}
 
+#alert {
+    position: absolute;
+    width: fit-content;
+    font-family: 'Roboto';
+    font-weight: 500;
+    transition: all ease-in-out 1s;
+    padding: 0.2rem 1.2rem;
+    border-radius: 50px;
+    bottom: 5%;
+    background-color: black;
+    color: white;
+    text-align: center;
+    opacity: 0;
+    z-index: 2;
+}
 .contant {
     margin-top: 10vh;
     margin: 1rem;
 }
 #fact-text {
+    position: relative;
     min-height: 30vh;
     width: 100%;
+}
+.icons {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 0 0.5rem 0.5rem 0;
+}
+.icons > img {
+    margin-right: 0.5rem;
+}
+.icons img {
+    margin-left: 0;
 }
 
 #saved-facts {
@@ -48,6 +76,7 @@ ul li #text {
     width: 1rem;
 }
 .whatsapp{
+    margin-right: 0.4rem;
     width: 1rem;
 }
 .delete {
