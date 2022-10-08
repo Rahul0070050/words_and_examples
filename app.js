@@ -46,7 +46,7 @@ shoRandomResult()
 
 let facts = JSON.parse(localStorage.getItem('fact'))
 facts?.forEach(fact => {
-    savedFacts.innerHTML += `<li class="list-group-item px-3 border-0 rounded-3 list-group-item-primary mb-2"><h6 id="text">${fact.fact}</h6><h6 id="delete" onClick="deleteFact(${fact.key})"><img src="https://img.icons8.com/ios-glyphs/90/000000/delete-sign.png"/></h6></li>`
+    savedFacts.innerHTML += `<li class="list-group-item px-3 border-0 rounded-3 list-group-item-primary mb-2"><h6 id="text">${fact.fact}</h6><h6 id="delete" onClick="deleteFact(${fact.key})"><img src="https://img.icons8.com/ios-glyphs/90/000000/delete-sign.png"/><a href="whatsapp://send?text="${fact.text}">wh</a></h6></li>`
 });
 
 function saveTheFact() {
@@ -59,11 +59,11 @@ function saveTheFact() {
         console.log(facts);
         localStorage.clear('fact')
         facts.push({ key, fact })
-        savedFacts.innerHTML += `<li class="list-group-item px-3 border-0 rounded-3 list-group-item-primary mb-2"><h6 id="text">${fact}</h6><h6 id="delete" onClick="deleteFact(${key})"><img src="https://img.icons8.com/ios-glyphs/90/000000/delete-sign.png"/></h6></li>`
+        savedFacts.innerHTML += `<li class="list-group-item px-3 border-0 rounded-3 list-group-item-primary mb-2"><h6 id="text">${fact}</h6><h6 id="delete" onClick="deleteFact(${key})"><img src="https://img.icons8.com/ios-glyphs/90/000000/delete-sign.png"/><a href="whatsapp://send?text="${fact.text}">wh</a></h6></li>`
         localStorage.setItem('fact', JSON.stringify(facts))
     } else {
         let facts = [{ key, fact }]
-        savedFacts.innerHTML = `<li class="list-group-item px-3 border-0 rounded-3 list-group-item-primary mb-2"><h6 id="text">${fact}</h6><h6 id="delete" onClick="deleteFact(${key})"><img src="https://img.icons8.com/ios-glyphs/90/000000/delete-sign.png"/></h6></li>`
+        savedFacts.innerHTML = `<li class="list-group-item px-3 border-0 rounded-3 list-group-item-primary mb-2"><h6 id="text">${fact}</h6><h6 id="delete" onClick="deleteFact(${key})"><img src="https://img.icons8.com/ios-glyphs/90/000000/delete-sign.png"/><a href="whatsapp://send?text="${fact.text}">wh</a></h6></li>`
         localStorage.setItem('fact', JSON.stringify(facts))
     }
 }
@@ -74,7 +74,7 @@ function deleteFact(key) {
     localStorage.setItem('fact', JSON.stringify(tempFact))
     savedFacts.innerHTML = ""
     tempFact?.forEach(fact => {
-        savedFacts.innerHTML += `<li class="list-group-item px-3 border-0 rounded-3 list-group-item-primary mb-2"><h6 id="text">${fact.fact}</h6><h6 id="delete" onClick="deleteFact(${fact.key})"><img src="https://img.icons8.com/ios-glyphs/90/000000/delete-sign.png"/></h6></li>`
+        savedFacts.innerHTML += `<li class="list-group-item px-3 border-0 rounded-3 list-group-item-primary mb-2"><h6 id="text">${fact.fact}</h6><h6 id="delete" onClick="deleteFact(${fact.key})"><img src="https://img.icons8.com/ios-glyphs/90/000000/delete-sign.png"/><a href="whatsapp://send?text="${fact.text}">wh</a></h6></li>`
     });
 }
 
