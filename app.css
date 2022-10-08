@@ -28,7 +28,6 @@ nav {
 
 #saved-facts {
     padding: 1rem;
-    margin: 1rem;
 }
 #saved-facts-list {
     max-height: 46vh;
@@ -39,17 +38,24 @@ nav {
 }
 ul li {
     display: flex !important;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-between !important;
+    align-items: center !important;
 }
 ul li #text {
     width: 80%;
 }
-ul li h6 img {
+.close {
+    width: 1rem;
+}
+.whatsapp{
     width: 1rem;
 }
 .delete {
     margin-right: 0;
+}
+#btns {
+    display: flex !important;
+    align-items: center !important;
 }
 
 
