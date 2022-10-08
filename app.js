@@ -46,7 +46,7 @@ shoRandomResult()
 
 let facts = JSON.parse(localStorage.getItem('fact'))
 facts?.forEach(fact => {
-    savedFacts.innerHTML += `<li class="list-group-item px-3 border-0 rounded-3 list-group-item-primary mb-2"><h6 id="text">${fact.fact}</h6><h6 id="delete" onClick="deleteFact(${fact.key})"><img src="https://img.icons8.com/ios-glyphs/90/000000/delete-sign.png"/></h6><a href="whatsapp://send?text="${fact.text}" data-action="share/whatsapp/share">wh</a></li>`
+    savedFacts.innerHTML += `<li class="list-group-item px-3 border-0 rounded-3 list-group-item-primary mb-2"><h6 id="text">${fact.fact}</h6><h6 id="delete" onClick="deleteFact(${fact.key})"><img src="https://img.icons8.com/ios-glyphs/90/000000/delete-sign.png"/></h6><a href="whatsapp://send?text="${fact.fact}" data-action="share/whatsapp/share">wh</a></li>`
 });
 
 function saveTheFact() {
