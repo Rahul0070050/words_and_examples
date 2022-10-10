@@ -22,10 +22,11 @@ body {
     width: fit-content;
     font-family: 'Roboto';
     font-weight: 500;
+    font-size: large;
     transition: all ease-in-out 1s;
     padding: 0.2rem 1.2rem;
-    border-radius: 50px;
-    bottom: 5%;
+    border-radius: 11px;
+    bottom: 10%;
     background-color: black;
     color: white;
     text-align: center;
