@@ -26,6 +26,7 @@ alertBox.style.left = window.innerWidth / 2 - alertBox.clientWidth / 2 + 'px'
 function showWordInfo(index) {
     info.style.zIndex = "0"
     info.style.opacity = "0"
+    wordDiv.innerText = sampleWord
     if (example[index].example) {
         meaningDiv.innerText = example[index].definition
         exampleDiv.innerText = example[index].example
@@ -65,7 +66,7 @@ function shoRandomWord() {
                     <li class="list-group-item px-3 border-0 rounded-3 list-group-item-primary mb-2">
                         <h6 id="text" onclick="showWordInfo(${index})">${eg.definition}</h6>
                         <div id="btns">
-                            <a href="whatsapp://send?text=${sampleWord}: ${eg.definition}%0a‎e.g: ${eg?.definition ? eg?.definition ? "N/A"}" data-action="share/whatsapp/share" >
+                            <a href="whatsapp://send?text=${sampleWord}: ${eg.definition}%0a‎e.g: ${eg.definition ? eg.definition : 'N/A'}" data-action="share/whatsapp/share" >
                                 <img class="whatsapp" src="${whatsappImg}">
                             </a>
                         </div>
