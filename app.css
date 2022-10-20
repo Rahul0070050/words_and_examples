@@ -56,10 +56,8 @@ body {
 
 #saved-facts {
     padding: 1rem;
-}
-#saved-facts-list {
-    max-height: 46vh;
-    overflow: auto;
+    max-height: 70vh !important;
+    overflow-y: auto;
 }
 #saved-facts-list::-webkit-scrollbar {
     display: none;
@@ -108,7 +106,7 @@ button {
 
 @media only screen and (max-width: 480px) {
     button {
-        position: absolute;
+        position: fixed !important;
         bottom: 25px;
         right: 25px;
     }
