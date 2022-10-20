@@ -37,9 +37,8 @@ body {
     margin-top: 10vh;
     margin: 1rem;
 }
-#fact-text {
+#new-word {
     position: relative;
-    min-height: 30vh;
     width: 100%;
 }
 .icons {
