@@ -64,7 +64,7 @@ function shoRandomWord() {
                 example?.forEach((eg, index) => {
                     savedFacts.innerHTML += `
                     <li class="list-group-item px-3 border-0 rounded-3 list-group-item-primary mb-2">
-                        <h6 id="text" onclick="showWordInfo(${index})">${eg.definition}</h6>
+                        <h5 id="text" onclick="showWordInfo(${index})">${eg.definition}</h5>
                         <div id="btns">
                             <a href="whatsapp://send?text=${sampleWord}: ${eg.definition}%0a‎e.g: ${eg.example ? eg.example : 'N/A'}" data-action="share/whatsapp/share" >
                                 <img class="whatsapp" src="${whatsappImg}">
