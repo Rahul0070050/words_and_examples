@@ -6,7 +6,6 @@ const cacheFiles = [
     "./app.css",
     "./index.html",
     "manifest.json",
-    "download.webp"
 ];
 
 self.addEventListener("install", function (event) {

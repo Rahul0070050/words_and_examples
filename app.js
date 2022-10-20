@@ -43,23 +43,31 @@ whatsApp.addEventListener('click', () => {
 
 function shoRandomWord() {
     fetch(randomWords).then(res => res.json()).then(word => {
-        fetch(wordMeaning + word[0]).then(res => res.json()).then(meanings => {
-            sampleWord = meanings[0]?.word
-            example = meanings[0]?.meanings[0]?.definitions
-            savedFacts.innerHTML = ""
-            newWord.innerText = sampleWord
-            copy = true
-            example?.forEach(eg => {
-                savedFacts.innerHTML += `
+        fetch(wordMeaning + word[0]).then(res => {
+            if (res.ok) {
+                return res.json()
+            } else {
+                return shoRandomWord()
+            }
+        }).then(meanings => {
+            if (meanings) {
+                sampleWord = meanings[0]?.word || "not found"
+                example = meanings[0]?.meanings[0]?.definitions
+                savedFacts.innerHTML = ""
+                newWord.innerText = sampleWord
+                copy = true
+                example?.forEach(eg => {
+                    savedFacts.innerHTML += `
                 <li class="list-group-item px-3 border-0 rounded-3 list-group-item-primary mb-2">
                     <h6 id="text">${eg.definition}</h6>
                     <div id="btns">
                         <a href="whatsapp://send?text=${sampleWord}: ${eg.definition}" data-action="share/whatsapp/share" target="_blank">
                             <img class="whatsapp" src="${whatsappImg}">
-                        </a>
-                    </div>
-                </li>`
-            });
+                            </a>
+                            </div>
+                            </li>`
+                });
+            }
 
         }).catch(err => {
 
