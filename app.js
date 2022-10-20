@@ -61,7 +61,7 @@ function shoRandomWord() {
                 <li class="list-group-item px-3 border-0 rounded-3 list-group-item-primary mb-2">
                     <h6 id="text">${eg.definition}</h6>
                     <div id="btns">
-                        <a href="whatsapp://send?text=${sampleWord}: ${eg.definition}" data-action="share/whatsapp/share" target="_blank">
+                        <a href="whatsapp://send?text=${sampleWord}: ${eg.definition}" data-action="share/whatsapp/share" >
                             <img class="whatsapp" src="${whatsappImg}">
                             </a>
                             </div>
