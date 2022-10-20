@@ -35,7 +35,7 @@ body {
 }
 .contant {
     margin-top: 10vh;
-    margin: 1rem;
+    margin: 1rem 1rem 0 1rem;
 }
 #new-word {
     position: relative;
@@ -102,4 +102,14 @@ button {
     overflow: hidden;
     z-index: 1;
     margin: 0.5rem 1rem;
+
+
+}
+
+@media only screen and (max-width: 480px) {
+    button {
+        position: absolute;
+        bottom: 25px;
+        right: 25px;
+    }
 }

@@ -10,33 +10,11 @@ let key = null;
 let have = false;
 let copy = false;
 
-const whatsApp = document.getElementById('whatsApp')
-const copyText = document.getElementById('copy-text')
 const alertBox = document.getElementById('alert')
 const newWord = document.getElementById('word')
 
 
 alertBox.style.left = window.innerWidth / 2 - alertBox.clientWidth / 2 + 'px'
-
-
-copyText.addEventListener('click', () => {
-    if (!copy) {
-        return
-    }
-    alertBox.style.opacity = '1'
-    setTimeout(() => {
-        alertBox.style.opacity = '0'
-    }, 1000);
-    copy = false
-    navigator.clipboard.writeText(fact)
-})
-
-whatsApp.addEventListener('click', () => {
-    const a = document.createElement('a')
-    a.setAttribute('href', `whatsapp://send?text=${fact}`)
-    a.setAttribute('data-action', 'share/whatsapp/share')
-    a.click()
-})
 
 
 
@@ -61,7 +39,7 @@ function shoRandomWord() {
                 <li class="list-group-item px-3 border-0 rounded-3 list-group-item-primary mb-2">
                     <h6 id="text">${eg.definition}</h6>
                     <div id="btns">
-                        <a href="whatsapp://send?text=${sampleWord}: ${eg.definition}" data-action="share/whatsapp/share" >
+                        <a href="whatsapp://send?text=${sampleWord}:\n ${eg.definition}" data-action="share/whatsapp/share" >
                             <img class="whatsapp" src="${whatsappImg}">
                             </a>
                             </div>
