@@ -62,6 +62,23 @@ body {
 #saved-facts-list::-webkit-scrollbar {
     display: none;
 }
+.info {
+    width: 90vw;
+    padding: 0.6rem 1rem 1rem 1rem;
+    background-color: rgb(94, 185, 203);
+    position: fixed;
+    border-radius: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    opacity: 0;
+    transition: all ease-in-out 0.5s;
+}
+.close-btn-div {
+    display: flex;
+    justify-content: end;
+}
 ul li {
     display: flex !important;
     justify-content: space-between !important;
