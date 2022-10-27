@@ -22,14 +22,6 @@ const body = document.querySelector('body')
 
 alertBox.style.left = window.innerWidth / 2 - alertBox.clientWidth / 2 + 'px'
 
-
-body.addEventListener('click', () => {
-    if(true) {
-        info.style.zIndex = "0"
-        info.style.opacity = "0"
-    }
-})
-
 function showWordInfo(index) {
     info.style.zIndex = "0"
     info.style.opacity = "0"
@@ -56,9 +48,8 @@ function shoRandomWord() {
     info.style.opacity = "0"
     fetch(randomWords).then(res => res.json()).then(word => {
         getExample(word, true)
-
     }).catch(err => {
-
+        
     })
 
 }
