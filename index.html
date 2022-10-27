@@ -28,6 +28,12 @@
             style="text-align: center; line-height: 2rem; margin: 1rem 0; background-color: #FAF7F0; padding: 1rem; border-radius: 10px; text-transform: capitalize;">
             <strong id="word">searching...</strong>
         </h2>
+        <div class="search-section input-group">
+            <input class="input form-control" id="input-field" placeholder="Enter a word" type="text">
+            <div class="input-group-prepend">
+                <button class="btn btn-primary input-group-text" id="search">search</button>
+            </div>
+        </div>
         <button class="btn btn-dark" id="" onclick="shoRandomWord()">Next</button>
     </div>
 
@@ -35,14 +41,15 @@
 
     <div class="info" id="info">
         <div class="close-btn-div">
-            <img class="close"  id="close" src="https://img.icons8.com/ios-glyphs/90/000000/delete-sign.png" />
+            <img class="close" id="close" src="https://img.icons8.com/ios-glyphs/90/000000/delete-sign.png" />
         </div>
         <h2 class="text-center mb-4"> <strong id="show-word"></strong></h2>
         <h5><strong>meaning: </strong><span id="meaning"></span></h5><br>
         <h5><strong>E.g: </strong> <span id="example"></span></h5>
     </div>
     <div id="saved-facts">
-        <ul class="list-group list-group-light" id="example-list"></ul>
+        <ul class="list-group list-group-light" id="example-list">
+        </ul>
     </div>
     <script src="./app.js"></script>
 

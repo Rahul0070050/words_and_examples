@@ -34,21 +34,25 @@ body {
     margin-top: 10vh;
     margin: 1rem 1rem 0 1rem;
 }
+.search-section {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.search-section button{
+    width: 100%;
+    text-transform: capitalize;
+    box-shadow: none;
+}
+.search-section input {
+    margin: 0 !important;
+    height: 100% !important;
+    width: 70%;
+
+}
 #new-word {
     position: relative;
     width: 100%;
-}
-.icons {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    margin: 0 0.5rem 0.5rem 0;
-}
-.icons > img {
-    margin-right: 0.5rem;
-}
-.icons img {
-    margin-left: 0;
 }
 
 #saved-facts {
@@ -103,7 +107,7 @@ ul li #text {
 
 
 /* From uiverse.io by @xueyuantan */
-button {
+.contant > button {
     width: 9em;
     height: 3em;
     border-radius: 30em;
@@ -119,7 +123,7 @@ button {
 }
 
 @media only screen and (max-width: 480px) {
-    button {
+    .contant > button {
         position: fixed !important;
         bottom: 25px;
         right: 25px;

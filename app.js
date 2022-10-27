@@ -8,20 +8,27 @@ let closeBtn = document?.getElementById('close')
 
 let example = null;
 let sampleWord = null;
-let key = null;
-let have = false;
-let copy = false;
-let info = document.getElementById('info')
+let firstWord = false;
 
+let info = document.getElementById('info')
 const alertBox = document.getElementById('alert')
 const newWord = document.getElementById('word')
 const meaningDiv = document.getElementById('meaning')
 const exampleDiv = document.getElementById('example')
 const wordDiv = document.getElementById('show-word')
+const search = document.getElementById('search')
+const inputField = document.getElementById('input-field')
+const body = document.querySelector('body')
 
 alertBox.style.left = window.innerWidth / 2 - alertBox.clientWidth / 2 + 'px'
 
 
+body.addEventListener('click', () => {
+    if(true) {
+        info.style.zIndex = "0"
+        info.style.opacity = "0"
+    }
+})
 
 function showWordInfo(index) {
     info.style.zIndex = "0"
@@ -48,41 +55,68 @@ function shoRandomWord() {
     info.style.zIndex = "0"
     info.style.opacity = "0"
     fetch(randomWords).then(res => res.json()).then(word => {
-        fetch(wordMeaning + word[0]).then(res => {
-            if (res.ok) {
-                return res.json()
-            } else {
-                return shoRandomWord()
-            }
-        }).then(meanings => {
-            if (meanings) {
-                sampleWord = meanings[0]?.word || "not found"
-                example = meanings[0]?.meanings[0]?.definitions
-                savedFacts.innerHTML = ""
-                newWord.innerText = sampleWord
-                copy = true
-                example?.forEach((eg, index) => {
-                    savedFacts.innerHTML += `
-                    <li class="list-group-item px-3 border-0 rounded-3 list-group-item-primary mb-2">
-                        <h5 id="text" onclick="showWordInfo(${index})">${eg.definition}</h5>
-                        <div id="btns">
-                            <a href="whatsapp://send?text=${sampleWord}: ${eg.definition}%0a‎e.g: ${eg.example ? eg.example : 'N/A'}" data-action="share/whatsapp/share" >
-                                <img class="whatsapp" src="${whatsappImg}">
-                            </a>
-                        </div>
-                    </li>`
-                });
-            }
-            // <span>${eg}</span>
-
-        }).catch(err => {
-
-        })
+        getExample(word, true)
 
     }).catch(err => {
 
     })
 
+}
+
+search.addEventListener('click', () => {
+    if (!firstWord) {
+        return
+    } else {
+        const text = /^[A-Za-z]+$/
+        let searchInput = inputField.value || "";
+        if (searchInput.match(text)) {
+            inputField.classList.add('is-valid')
+            inputField.setAttribute('placeholder', "Enter a word")
+            inputField.classList.remove('is-invalid')
+            getExample([searchInput], false)
+        } else {
+            inputField.setAttribute('placeholder', "It's invalid")
+            inputField.classList.add('is-invalid')
+        }
+    }
+})
+
+function getExample(word, fromFetch) {
+    fetch(wordMeaning + word[0]).then(res => {
+        if (res.ok) {
+            return res.json()
+        } else {
+            if (fromFetch) {
+                return shoRandomWord()
+            } else {
+                savedFacts.innerHTML = '<div class="text-center mt-3">Oops</div>'
+                newWord.innerText = 'word not available'
+            }
+        }
+    }).then(meanings => {
+        if (meanings) {
+            sampleWord = meanings[0]?.word || "not found"
+            example = meanings[0]?.meanings[0]?.definitions
+            savedFacts.innerHTML = ''
+            newWord.innerText = sampleWord
+            firstWord = true
+            example?.forEach((eg, index) => {
+                savedFacts.innerHTML += `
+                <li class="list-group-item px-3 border-0 rounded-3 list-group-item-primary mb-2">
+                    <h5 id="text" onclick="showWordInfo(${index})">${eg.definition}</h5>
+                    <div id="btns">
+                        <a href="whatsapp://send?text=${sampleWord}: ${eg.definition}%0a‎e.g: ${eg.example ? eg.example : 'N/A'}" data-action="share/whatsapp/share" >
+                            <img class="whatsapp" src="${whatsappImg}">
+                        </a>
+                    </div>
+                </li>`
+            });
+        }
+        // <span>${eg}</span>
+
+    }).catch(err => {
+
+    })
 }
 
 shoRandomWord()
