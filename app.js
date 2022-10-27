@@ -54,11 +54,19 @@ function shoRandomWord() {
 
 }
 
+
+
+inputField.addEventListener('keypress',(e) => {
+    if(e.key == "Enter") {
+        search.click()
+    }
+})
+
 search.addEventListener('click', () => {
     if (!firstWord) {
         return
     } else {
-        const text = /^[A-Za-z]+$/
+        const text = /^[A-Za-z\s]+$/
         let searchInput = inputField.value || "";
         if (searchInput.match(text)) {
             inputField.classList.add('is-valid')
