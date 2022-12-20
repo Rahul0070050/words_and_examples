@@ -53,7 +53,7 @@ git push origin <your-branch>
 ```
 #### Make a pull request
 
-### Thank you for your consideration
+### Thank you for your time
 
 <br/>
 
