@@ -24,7 +24,7 @@ This is a web app only mobile design is now available, also you can try (add to 
 <br/>
 
 
-<img src="images/image002.jpg" alt="" style="width: 20rem;height: 39rem;border-radius: 10px;"> &nbsp;&nbsp;&nbsp;&nbsp;
+<a><img src="images/image002.jpg" alt="" style="width: 20rem;height: 39rem;border-radius: 10px;"></a> &nbsp;&nbsp;&nbsp;&nbsp;
 <img src="images/image005.png" alt="" style="width: 20rem;height: 39rem;border-radius: 10px;"> &nbsp;&nbsp;&nbsp;&nbsp;
 <img src="images/image001.jpg" alt="" style="width: 20rem;height: 39rem;border-radius: 10px;"> &nbsp;&nbsp;&nbsp;&nbsp;
 <img src="images/image004.jpg" alt="" style="width: 20rem;height: 39rem;border-radius: 10px;"> &nbsp;&nbsp;&nbsp;&nbsp;
