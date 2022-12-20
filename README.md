@@ -25,6 +25,8 @@ This is a web app only mobile design is now available, also you can try (add to 
 
 If you have any idea Please shear with me
 
+#### Fork the repo
+
 #### To clone this project, run the following command:
 ```git
 git clone https://github.com/Rahul0070050/wordsAndExamples.git
@@ -40,10 +42,16 @@ cd wordsAndExamples
 git branch <branch-name>
 ```
 
-#### Do some changes and push the code
+#### Commit your changes
+```git
+git add . && git commit -m "<commit massage>"
+```
+
+#### Push the code to the repo
 ```git
 git push origin <your-branch>
 ```
+#### Make a pull request
 
 <br/>
 
