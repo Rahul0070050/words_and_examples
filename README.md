@@ -27,17 +27,22 @@ If you have any idea Please shear with me
 
 #### To clone this project, run the following command:
 ```git
-    git clone https://github.com/Rahul0070050/wordsAndExamples.git
+git clone https://github.com/Rahul0070050/wordsAndExamples.git
 ```
 
 #### Go to the directory
 ```git
-    cd wordsAndExamples
+cd wordsAndExamples
+```
+
+#### Create a new branch for your changes
+```git
+git branch <branch-name>
 ```
 
 #### Do some changes and push the code
 ```git
-    git push origin <your-branch>
+git push origin <your-branch>
 ```
 
 <br/>
