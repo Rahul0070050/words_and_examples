@@ -2,7 +2,7 @@
 img { 
   width: 20rem;
   height: 39rem;
-  border-radius: 10px
+  border-radius: 10px;
 }
 </style>
 
