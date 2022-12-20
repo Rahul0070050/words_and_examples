@@ -1,11 +1,3 @@
-<style>
-img { 
-  width: 20rem;
-  height: 39rem;
-  border-radius: 10px;
-}
-</style>
-
 
 # Automatically generated Words and their examples
 
