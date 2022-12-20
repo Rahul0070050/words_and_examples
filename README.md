@@ -23,8 +23,22 @@ This is a web app only mobile design is now available, also you can try (add to 
 
 ## Contribute
 
-
 If you have any idea Please shear with me
+
+### To clone this project, run the following command:
+```git
+    git clone https://github.com/Rahul0070050/wordsAndExamples.git
+```
+
+### Go to the directory
+```git
+    cd wordsAndExamples
+```
+
+### Do some changes and push the code
+```git
+    git push origin <your-branch>
+```
 
 <br/>
 
