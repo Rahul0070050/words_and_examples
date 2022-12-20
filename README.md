@@ -47,11 +47,10 @@ git branch <branch-name>
 git add . && git commit -m "<commit massage>"
 ```
 
-#### Push the code to the repo
+#### Push the code to repo and Make a pull request
 ```git
 git push origin <your-branch>
 ```
-#### Make a pull request
 
 ### Thank you for your time
 
