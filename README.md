@@ -18,15 +18,17 @@ This is a web app only mobile design is now available, also you can try (add to 
  3. JS
 
 <br/>
-<div display="flex" justify-content="space-between">
-    <img src="images/image002.jpg" alt="" style="width: 20rem;height: 39rem;border-radius: 10px;">
+<div align="center">
+    <img src="images/image002.jpg" alt="" style="width: 20rem;height: 39rem;border-radius: 10px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <img src="images/image005.png" alt="" style="width: 20rem;height: 39rem;border-radius: 10px;">
 </div>
 <br/>
 <br/>
 <br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/image001.jpg" alt="" style="width: 20rem;height: 39rem;border-radius: 10px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/image004.jpg" alt="" style="width: 20rem;height: 39rem;border-radius: 10px;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<div align="center">
+    <img src="images/image001.jpg" alt="" style="width: 20rem;height: 39rem;border-radius: 10px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <img src="images/image004.jpg" alt="" style="width: 20rem;height: 39rem;border-radius: 10px;">
+</div>
 
 ## Contribute
 
