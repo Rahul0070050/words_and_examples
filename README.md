@@ -18,11 +18,10 @@ This is a web app only mobile design is now available, also you can try (add to 
  3. JS
 
 <br/>
-<p align="center">
-<img src="images/image002.jpg" alt="" style="width: 20rem;height: 39rem;border-radius: 10px;">
-</p>
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/image005.png" alt="" style="width: 20rem;height: 39rem;border-radius: 10px;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<div display="flex" justify-content="space-between">
+    <img src="images/image002.jpg" alt="" style="width: 20rem;height: 39rem;border-radius: 10px;">
+    <img src="images/image005.png" alt="" style="width: 20rem;height: 39rem;border-radius: 10px;">
+</div>
 <br/>
 <br/>
 <br/>
