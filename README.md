@@ -1,4 +1,4 @@
-# Automatically generated Words and their examples
+# Automatically generate Words and their examples
 
 This is a web app only mobile design is now available, also you can try (add to home screen)
 
