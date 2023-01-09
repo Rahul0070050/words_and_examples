@@ -12,6 +12,7 @@ body {
     font-family: sans-serif;
     text-transform: capitalize;
     font-size: large;
+    overflow-x: hidden !important;
 }
 
 #alert {
@@ -59,14 +60,20 @@ body {
     position: relative;
     width: 100%;
 }
+#new-word i {
+    font-size: 1.2rem;
+    margin-left: 0.4rem;
+    display: none;
+}
 
-#saved-facts {
+#examples {
+    margin: 1rem;
     padding: 1rem;
     max-height: 70vh !important;
     overflow-y: auto;
 }
 
-#saved-facts-list::-webkit-scrollbar {
+#examples-list::-webkit-scrollbar {
     display: none;
 }
 
@@ -94,12 +101,12 @@ body {
     display: flex;
     justify-content: end;
 }
-ul li {
+li {
     display: flex !important;
     justify-content: space-between !important;
     align-items: center !important;
 }
-ul li #text {
+li #text {
     width: 80%;
 }
 .close {
@@ -115,6 +122,9 @@ ul li #text {
 #btns {
     display: flex !important;
     align-items: center !important;
+}
+.show {
+    display: inline !important;
 }
 
 
