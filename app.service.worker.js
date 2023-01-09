@@ -3,9 +3,7 @@ const CATCHE_NAME = "rahuls catche"
 
 // put the files toor for caching 
 const cacheFiles = [
-    "./app.css",
-    "./index.html",
-    "manifest.json",
+    ''
 ];
 
 self.addEventListener("install", function (event) {

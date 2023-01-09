@@ -23,8 +23,7 @@ const body = document.querySelector('body')
 alertBox.style.left = window.innerWidth / 2 - alertBox.clientWidth / 2 + 'px'
 
 function showWordInfo(index) {
-    info.style.zIndex = "0"
-    info.style.opacity = "0"
+    info.classList.add('show-info')
     wordDiv.innerText = sampleWord
     if (example[index].example) {
         meaningDiv.innerText = example[index].definition
@@ -33,13 +32,11 @@ function showWordInfo(index) {
         meaningDiv.innerText = example[index].definition
         exampleDiv.innerText = "N/A"
     }
-    info.style.zIndex = "5"
-    info.style.opacity = "1"
 }
 
 closeBtn?.addEventListener('click', (e) => {
-    info.style.zIndex = "0"
-    info.style.opacity = "0"
+    info.classList.remove('show-info')
+
 })
 
 

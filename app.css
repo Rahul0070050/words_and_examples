@@ -30,26 +30,31 @@ body {
     opacity: 0;
     z-index: 2;
 }
+
 .contant {
     margin-top: 10vh;
     margin: 1rem 1rem 0 1rem;
 }
+
 .search-section {
     width: 100%;
     display: flex;
     align-items: center;
 }
+
 .search-section button{
     width: 100%;
     text-transform: capitalize;
     box-shadow: none;
 }
+
 .search-section input {
     margin: 0 !important;
     height: 100% !important;
     width: 70%;
 
 }
+
 #new-word {
     position: relative;
     width: 100%;
@@ -60,21 +65,30 @@ body {
     max-height: 70vh !important;
     overflow-y: auto;
 }
+
 #saved-facts-list::-webkit-scrollbar {
     display: none;
 }
+
 .info {
     width: 90vw;
     padding: 0.6rem 1rem 1rem 1rem;
     background-color: rgb(94, 185, 203);
+    color: black;
     position: fixed;
     border-radius: 10px;
-    top: 50%;
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 0;
     opacity: 0;
     transition: all ease-in-out 0.5s;
+    box-shadow: 3px 3px 10px 3px rgba(0, 0, 0, 0.585);
+}
+.show-info {
+    z-index: 3 !important;
+    opacity: 1 !important;
+    top: 50% !important;
 }
 .close-btn-div {
     display: flex;
