@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
     position: relative;
     min-height: 98vh;
@@ -43,7 +44,7 @@ body {
     align-items: center;
 }
 
-.search-section button{
+.search-section button {
     width: 100%;
     text-transform: capitalize;
     box-shadow: none;
@@ -60,6 +61,7 @@ body {
     position: relative;
     width: 100%;
 }
+
 #new-word i {
     font-size: 1.2rem;
     margin-left: 0.4rem;
@@ -92,37 +94,50 @@ body {
     transition: all ease-in-out 0.5s;
     box-shadow: 3px 3px 10px 3px rgba(0, 0, 0, 0.585);
 }
+
 .show-info {
     z-index: 3 !important;
     opacity: 1 !important;
     top: 50% !important;
 }
+
+.meaning i {
+    margin-left: 0.6rem;
+}
+
 .close-btn-div {
     display: flex;
     justify-content: end;
 }
+
 li {
     display: flex !important;
     justify-content: space-between !important;
     align-items: center !important;
 }
+
 li #text {
     width: 80%;
 }
+
 .close {
     width: 1rem;
 }
-.whatsapp{
+
+.whatsapp {
     margin-right: 0.4rem;
     width: 1rem;
 }
+
 .delete {
     margin-right: 0;
 }
+
 #btns {
     display: flex !important;
     align-items: center !important;
 }
+
 .show {
     display: inline !important;
 }
@@ -131,7 +146,7 @@ li #text {
 
 
 /* From uiverse.io by @xueyuantan */
-.contant > button {
+.contant>button {
     width: 9em;
     height: 3em;
     border-radius: 30em;
@@ -147,7 +162,7 @@ li #text {
 }
 
 @media only screen and (max-width: 480px) {
-    .contant > button {
+    .contant>button {
         position: fixed !important;
         bottom: 25px;
         right: 25px;

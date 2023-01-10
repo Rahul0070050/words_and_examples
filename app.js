@@ -10,6 +10,8 @@ let example = null;
 let sampleWord = null;
 let firstWord = false;
 let sound = ''
+let speakData = ''
+let speakWord = ''
 
 let info = document.getElementById('info')
 const newWord = document.getElementById('word')
@@ -29,11 +31,12 @@ function showWordInfo(meansIndex, defIndex) {
 
     const wordInfo = example[meansIndex].definitions[defIndex]
 
+
     if (example[defIndex]?.example) {
-        meaningDiv.innerText = wordInfo.definition
-        exampleDiv.innerText = wordInfo.example
+        meaningDiv.innerHTML = `${wordInfo.definition} <i id="audio" class='fas fa-volume-up' onclick="playDefanition('${wordInfo.definition}')"></i>`
+        exampleDiv.innerHTML = `${wordInfo.example} <i id="audio" class='fas fa-volume-up' onclick="playDefanition('${wordInfo.example}')"></i>`
     } else {
-        meaningDiv.innerText = wordInfo.definition
+        meaningDiv.innerHTML = `${wordInfo.definition} <i id="audio" class='fas fa-volume-up' onclick="playDefanition('${wordInfo.definition}')"></i>`
         exampleDiv.innerText = "N/A"
     }
 }
@@ -55,6 +58,12 @@ function shoRandomWord() {
 
 }
 
+function playDefanition(definition) {
+    speakData = new SpeechSynthesisUtterance(definition);
+    speakData.rate = 1; // From 0.1 to 10
+    speechSynthesis.speak(speakData);
+}
+
 
 
 inputField.addEventListener('keypress', (e) => {
@@ -69,7 +78,7 @@ search.addEventListener('click', () => {
     } else {
         const text = /^[A-Za-z\s]+$/
         let searchInput = inputField.value || "";
-        
+
         // checking the word only contain alphabets
         if (searchInput.match(text)) {
             inputField.classList.add('is-valid')
@@ -84,10 +93,13 @@ search.addEventListener('click', () => {
 })
 
 audio.addEventListener('click', () => {
-    sound.play()
+    speakWord = new SpeechSynthesisUtterance(sound);
+    speakWord.rate = 1; // From 0.1 to 10
+    speechSynthesis.speak(speakWord);
 })
 
 function getExample(word, fromFetch) {
+    audio.classList.remove('show')
     fetch(wordMeaning + word[0]).then(res => {
         if (res.ok) {
             return res.json()
@@ -108,38 +120,24 @@ function getExample(word, fromFetch) {
             wordsMeaningsList.innerHTML = ''
 
             example = meanings[0].meanings
-            
+
             samples = meanings[0]?.meanings || "not found"
-            
+
             // assign the word to a variable
             sampleWord = meanings[0].word
-            
+            sound = meanings[0].word
+
             // clearing old word info
             warning.innerHTML = ''
-            
+
             // show word in the header section
             newWord.innerText = sampleWord
-            
+
             // console.log(meanings[0]?.phonetics);
-            
+
             firstWord = true
 
-            // reset audio settings
-            sound = ''
-            audio.classList.remove('show')
-
-            meanings[0]?.phonetics?.forEach(soundObj => {
-                console.log(sound);
-                if (soundObj?.audio !== "") {
-                    console.log('hi');
-                    sound = new Audio(soundObj.audio)
-                    return
-                }
-            })
-
-            if (sound) {
-                audio.classList.add('show')
-            }
+            audio.classList.add('show')
 
             // console.log(samples);
             samples?.forEach((means, meansIndex) => {
@@ -149,12 +147,12 @@ function getExample(word, fromFetch) {
                 means.definitions?.forEach((def, defIndex) => {
                     wordsMeaningsList.innerHTML += `
                     <li class="list-group-item px-3 border-0 rounded-3 list-group-item-primary mb-2">
-                    <h5 id="text" onclick="showWordInfo(${meansIndex},${defIndex})">${def.definition}</h5>
-                    <div id="btns">
-                    <a href="whatsapp://send?text=${sampleWord}: ${def.definition}%0a‎e.g: ${def.example ? def.example : 'N/A'}" data-action="share/whatsapp/share" >
-                    <img class="whatsapp" src="${whatsappImg}">
-                    </a>
-                    </div>
+                        <h5 id="text" onclick="showWordInfo(${meansIndex},${defIndex})">${def.definition}</h5>
+                        <div id="btns">
+                            <a href="whatsapp://send?text=${sampleWord}: ${def.definition}%0a‎e.g: ${def.example ? def.example : 'N/A'}" data-action="share/whatsapp/share" >
+                                <img class="whatsapp" src="${whatsappImg}" />
+                            </a>
+                        </div>
                     </li>`
                 })
 
@@ -165,6 +163,7 @@ function getExample(word, fromFetch) {
 
     })
 }
+
 
 shoRandomWord()
 
