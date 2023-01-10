@@ -12,18 +12,16 @@ let firstWord = false;
 let sound = ''
 
 let info = document.getElementById('info')
-const alertBox = document.getElementById('alert')
 const newWord = document.getElementById('word')
 const meaningDiv = document.getElementById('meaning')
 const exampleDiv = document.getElementById('example')
 const wordDiv = document.getElementById('show-word')
 const search = document.getElementById('search')
-const showExamples = document.getElementById('examples')
+const wordsMeaningsList = document.getElementById('words-meanings-list')
 const inputField = document.getElementById('input-field')
 const audio = document.getElementById('audio')
 const body = document.querySelector('body')
 
-alertBox.style.left = window.innerWidth / 2 - alertBox.clientWidth / 2 + 'px'
 
 function showWordInfo(meansIndex, defIndex) {
     info.classList.add('show-info')
@@ -42,14 +40,13 @@ function showWordInfo(meansIndex, defIndex) {
 
 closeBtn?.addEventListener('click', (e) => {
     info.classList.remove('show-info')
-
 })
 
 
 function shoRandomWord() {
+    inputField.value = ''
     info.style.zIndex = "0"
     info.style.opacity = "0"
-    audio.classList.remove('show')
     fetch(randomWords).then(res => res.json()).then(word => {
         getExample(word, true)
     }).catch(err => {
@@ -62,7 +59,6 @@ function shoRandomWord() {
 
 inputField.addEventListener('keypress', (e) => {
     if (e.key == "Enter") {
-        audio.classList.remove('show')
         search.click()
     }
 })
@@ -73,6 +69,8 @@ search.addEventListener('click', () => {
     } else {
         const text = /^[A-Za-z\s]+$/
         let searchInput = inputField.value || "";
+        
+        // checking the word only contain alphabets
         if (searchInput.match(text)) {
             inputField.classList.add('is-valid')
             inputField.setAttribute('placeholder', "Enter a word")
@@ -85,7 +83,7 @@ search.addEventListener('click', () => {
     }
 })
 
-audio.addEventListener('click',() => {
+audio.addEventListener('click', () => {
     sound.play()
 })
 
@@ -100,46 +98,56 @@ function getExample(word, fromFetch) {
                 audio.classList.remove('show')
                 warning.innerHTML = '<div class="text-center mt-3">Oops</div>'
                 newWord.innerText = 'word not available'
-                showExamples.innerHTML = ''
+                wordsMeaningsList.innerHTML = ''
             }
         }
     }).then(meanings => {
         if (meanings) {
-            showExamples.innerHTML = ''
+
+            // clening the div
+            wordsMeaningsList.innerHTML = ''
+
             example = meanings[0].meanings
+            
             samples = meanings[0]?.meanings || "not found"
             
+            // assign the word to a variable
             sampleWord = meanings[0].word
-
+            
             // clearing old word info
             warning.innerHTML = ''
             
-            // show word
+            // show word in the header section
             newWord.innerText = sampleWord
             
-            console.log(meanings[0]?.phonetics);
+            // console.log(meanings[0]?.phonetics);
             
+            firstWord = true
+
+            // reset audio settings
+            sound = ''
+            audio.classList.remove('show')
+
             meanings[0]?.phonetics?.forEach(soundObj => {
                 console.log(sound);
-                if(soundObj?.audio !== "") {
+                if (soundObj?.audio !== "") {
                     console.log('hi');
                     sound = new Audio(soundObj.audio)
                     return
                 }
             })
 
-            if(sound) {
+            if (sound) {
                 audio.classList.add('show')
             }
-            firstWord = true
 
             // console.log(samples);
             samples?.forEach((means, meansIndex) => {
 
-                showExamples.innerHTML += `<h5>${means.partOfSpeech}</h5>`
+                wordsMeaningsList.innerHTML += `<h5>${means.partOfSpeech}</h5>`
 
                 means.definitions?.forEach((def, defIndex) => {
-                    showExamples.innerHTML += `
+                    wordsMeaningsList.innerHTML += `
                     <li class="list-group-item px-3 border-0 rounded-3 list-group-item-primary mb-2">
                     <h5 id="text" onclick="showWordInfo(${meansIndex},${defIndex})">${def.definition}</h5>
                     <div id="btns">
