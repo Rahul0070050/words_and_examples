@@ -120,7 +120,7 @@ function getExample(word, fromFetch) {
             wordsMeaningsList.innerHTML = ''
 
             example = meanings[0].meanings
-
+            
             samples = meanings[0]?.meanings || "not found"
 
             // assign the word to a variable
