@@ -119,7 +119,7 @@ function getExample(word, fromFetch) {
             // clening the div
             wordsMeaningsList.innerHTML = ''
 
-            example = meanings[0].meanings
+            example = meanings[0]?.meanings
             
             samples = meanings[0]?.meanings || "not found"
 
